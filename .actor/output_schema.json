@@ -1,0 +1,31 @@
+{
+  "actorOutputSchemaVersion": 1,
+  "title": "Telegram posts & web tables — output",
+  "description": "One row per post or table row, plus one summary record per table and one offer record. Export the dataset as CSV or XLSX from the Apify Console, or use the links below.",
+  "properties": {
+    "results": {
+      "type": "string",
+      "title": "All rows (JSON)",
+      "description": "Posts, table rows, table summaries and the Pro offer record.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items"
+    },
+    "csv": {
+      "type": "string",
+      "title": "All rows (CSV)",
+      "description": "Dataset as CSV, ready for Excel / Google Sheets.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?format=csv"
+    },
+    "xlsx": {
+      "type": "string",
+      "title": "All rows (XLSX)",
+      "description": "Dataset as a real Excel workbook.",
+      "template": "{{links.apiDefaultDatasetUrl}}/items?format=xlsx"
+    },
+    "summary": {
+      "type": "string",
+      "title": "Run summary",
+      "description": "Counts of posts, tables, rows and failures.",
+      "template": "{{links.apiDefaultKeyValueStoreUrl}}/records/SUMMARY"
+    }
+  }
+}

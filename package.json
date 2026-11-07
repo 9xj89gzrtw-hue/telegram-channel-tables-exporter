@@ -1,0 +1,38 @@
+{
+  "name": "telegram-channel-tables-exporter",
+  "version": "1.0.0",
+  "description": "Apify Actor that reads public Telegram channels (t.me/s/) and any web table into a clean CSV/XLSX dataset without login.",
+  "type": "module",
+  "main": "src/run.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "test": "node --test",
+    "smoke": "node src/main.js --sources https://t.me/s/durov --max-posts 5"
+  },
+  "keywords": [
+    "apify",
+    "apify-actor",
+    "telegram",
+    "telegram-channel",
+    "scraper",
+    "table-extractor",
+    "csv",
+    "xlsx",
+    "excel",
+    "no-login",
+    "data-extraction"
+  ],
+  "author": "9xj89gzrtw-hue",
+  "license": "MIT",
+  "homepage": "https://9xj89gzrtw-hue.github.io/data-clipper/",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/9xj89gzrtw-hue/telegram-channel-tables-exporter.git"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "apify": "^3.2.0"
+  }
+}

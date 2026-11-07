@@ -1,0 +1,32 @@
+{
+  "actorSpecification": 1,
+  "name": "telegram-channel-posts-and-tables-to-csv-xlsx",
+  "title": "Telegram Channel Posts & Web Tables to CSV/XLSX — No Login",
+  "description": "Read public t.me/s/ channels (date, text, views, reactions, links) and any web table into a clean dataset, CSV or Excel. No Telegram account, no API key, no browser. Free tier + Pro browser export (TW1-CLIP).",
+  "version": "1.0",
+  "buildTag": "latest",
+  "input": "./INPUT_SCHEMA.json",
+  "dockerfile": "../Dockerfile",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  },
+  "categories": [
+    "AUTOMATION",
+    "DATA_EXTRACTION",
+    "SOCIAL_MEDIA",
+    "MARKETING"
+  ],
+  "minMemoryMbytes": 256,
+  "maxMemoryMbytes": 1024,
+  "meta": {
+    "generatedBy": "9xj89gzrtw-hue/telegram-channel-tables-exporter",
+    "store": "https://9xj89gzrtw-hue.github.io/data-clipper/",
+    "platiLot": "https://plati.market/itm/6354602"
+  },
+  "defaultRunOptions": {
+    "build": "latest",
+    "timeoutSecs": 900,
+    "memoryMbytes": 512
+  },
+  "output": "./output_schema.json"
+}

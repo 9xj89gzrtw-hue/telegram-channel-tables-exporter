@@ -1,0 +1,112 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "type": "object",
+    "properties": {
+      "_type": {
+        "type": "string",
+        "description": "post | table | table_row | offer | error"
+      },
+      "source_type": {
+        "type": ["string", "null"],
+        "description": "telegram | table"
+      },
+      "source_url": {
+        "type": ["string", "null"],
+        "description": "Channel profile or page URL the row came from"
+      },
+      "channel": {
+        "type": ["string", "null"],
+        "description": "Public channel username"
+      },
+      "post_id": {
+        "type": ["integer", "null"],
+        "description": "Telegram post number"
+      },
+      "url": {
+        "type": ["string", "null"],
+        "description": "Direct post URL"
+      },
+      "date": {
+        "type": ["string", "null"],
+        "description": "ISO timestamp of the post"
+      },
+      "text": {
+        "type": ["string", "null"],
+        "description": "Post text or cell value"
+      },
+      "views": {
+        "type": ["integer", "null"],
+        "description": "Post views"
+      },
+      "forwards": {
+        "type": ["integer", "null"],
+        "description": "Post forwards"
+      },
+      "replies": {
+        "type": ["integer", "null"],
+        "description": "Post replies"
+      },
+      "reactions_total": {
+        "type": ["integer", "null"],
+        "description": "Sum of reaction counters"
+      },
+      "reactions": {
+        "type": ["array", "null"],
+        "description": "Reaction emoji and counts"
+      },
+      "links": {
+        "type": ["array", "null"],
+        "description": "External links found in the post"
+      },
+      "media_type": {
+        "type": ["string", "null"],
+        "description": "photo | video | document | voice | poll | sticker | null"
+      },
+      "table_index": {
+        "type": ["integer", "null"],
+        "description": "1-based table number on the page"
+      },
+      "table_title": {
+        "type": ["string", "null"],
+        "description": "Page title for table rows"
+      },
+      "row_index": {
+        "type": ["integer", "null"],
+        "description": "1-based data row number"
+      },
+      "headers": {
+        "type": ["array", "null"],
+        "description": "Column names for a table summary record"
+      },
+      "row_count": {
+        "type": ["integer", "null"],
+        "description": "Rows in the table summary"
+      },
+      "error": {
+        "type": ["string", "null"],
+        "description": "Error text for an error record"
+      },
+      "offer": {
+        "type": "string",
+        "description": "One-line Pro offer repeated in every record"
+      }
+    }
+  },
+  "views": {
+    "posts": {
+      "title": "Telegram posts",
+      "transformation": {
+        "fields": ["channel", "post_id", "date", "views", "reactions_total", "text"]
+      },
+      "display": { "component": "table" }
+    },
+    "tables": {
+      "title": "Table rows",
+      "transformation": {
+        "fields": ["table_title", "table_index", "row_index", "text"]
+      },
+      "display": { "component": "table" }
+    }
+  }
+}

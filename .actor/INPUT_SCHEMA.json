@@ -1,0 +1,67 @@
+{
+  "title": "Telegram channels & web tables input",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "sources": {
+      "title": "Channels or URLs to extract",
+      "type": "array",
+      "description": "Mix public Telegram channels (https://t.me/s/name, t.me/name, @name) and ordinary URLs with HTML tables or .csv/.tsv files.",
+      "editor": "stringList",
+      "prefill": [
+        "https://t.me/s/durov",
+        "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)"
+      ],
+      "default": [],
+      "items": { "type": "string" }
+    },
+    "mode": {
+      "title": "What to read",
+      "type": "string",
+      "description": "auto detects Telegram links and treats everything else as a table page. Force telegram or tables when a URL is ambiguous.",
+      "editor": "select",
+      "default": "auto",
+      "enum": ["auto", "telegram", "tables"],
+      "enumTitles": ["Auto-detect", "Telegram channels only", "Web tables only"]
+    },
+    "maxPosts": {
+      "title": "Max posts per channel",
+      "type": "integer",
+      "description": "The public preview exposes ~20 posts per page; the Actor walks backwards with ?before=. 100 is a good default.",
+      "default": 100,
+      "minimum": 1,
+      "maximum": 500
+    },
+    "maxTables": {
+      "title": "Max tables per URL",
+      "type": "integer",
+      "description": "Keep the first N tables found on a page.",
+      "default": 10,
+      "minimum": 1,
+      "maximum": 30
+    },
+    "maxRowsPerTable": {
+      "title": "Max rows per table",
+      "type": "integer",
+      "description": "Caps one table so a huge page cannot exhaust memory.",
+      "default": 5000,
+      "minimum": 1,
+      "maximum": 20000
+    },
+    "includeOffer": {
+      "title": "Include the Pro offer record",
+      "type": "boolean",
+      "description": "Adds one final record with the unlimited browser export + WB/Ozon calculator link (TW1-CLIP) and the Plati.Market card.",
+      "default": true
+    },
+    "requestTimeoutSecs": {
+      "title": "Request timeout (seconds)",
+      "type": "integer",
+      "description": "Per-page HTTP timeout.",
+      "default": 25,
+      "minimum": 5,
+      "maximum": 120
+    }
+  },
+  "required": ["sources"]
+}

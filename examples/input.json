@@ -1,0 +1,11 @@
+{
+  "sources": [
+    "https://t.me/s/durov",
+    "https://en.wikipedia.org/wiki/List_of_countries_by_GDP_(nominal)"
+  ],
+  "mode": "auto",
+  "maxPosts": 20,
+  "maxTables": 2,
+  "maxRowsPerTable": 50,
+  "includeOffer": true
+}
